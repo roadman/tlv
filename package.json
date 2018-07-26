@@ -1,0 +1,40 @@
+{
+  "name": "tlv",
+  "version": "1.0.0",
+  "description": "twitter timeline viewer",
+  "main": "dist/app.js",
+  "engines": {
+    "node": "8.11.3"
+  },
+  "scripts": {
+    "start-watch-dev": "NODE_ENV=development nodemon dist/app.js",
+    "prestart": "tsc -m commonjs",
+    "start": "node dist/app.js",
+    "build": "tsc -m commonjs",
+    "build-watch": "tsc -m commonjs -w",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roadman/tlv.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roadman/tlv/issues"
+  },
+  "homepage": "https://github.com/roadman/tlv#readme",
+  "dependencies": {
+    "colors": "^1.3.1",
+    "dotenv": "^6.0.0",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "@types/colors": "^1.2.1",
+    "@types/dotenv": "^4.0.3",
+    "@types/node": "^10.5.3",
+    "@types/twit": "^2.2.17",
+    "nodemon": "^1.18.3",
+    "typescript": "^2.9.2"
+  }
+}
