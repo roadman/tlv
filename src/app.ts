@@ -18,7 +18,7 @@ twStream.on(
   'tweet', 
   (tweetSrc:any) => {
     let tweetData = libTwit.getTweetData(tweetSrc)
-    if(!tweetData || tweetData.text.match(/\[PR\]/)) {
+    if(!tweetData || tweetData.text.match(/［PR］/)) {
       return;
     }
   
