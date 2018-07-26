@@ -1,7 +1,8 @@
 'use strict';
 
-import * as color   from 'colors';
-import * as libTwit from './lib/twitter';
+//import * as notifier from 'node-notifier';
+import * as color    from 'colors';
+import * as libTwit  from './lib/twitter';
 
 // env load
 require('dotenv').config();
@@ -20,6 +21,17 @@ twStream.on(
     if(!tweetData || tweetData.text.match(/\[PR\]/)) {
       return;
     }
+  
+//    notifier.notify(
+//      {
+//        title: 'test',
+//        message: tweetData.text
+//      },
+//      (err,res) => {
+//        console.log(err, res);
+//      }
+//    );
+
     console.log(
       color.bgCyan(`${tweetData.screen_name}(@${tweetData.tweet_acount})`),
       tweetData.text.replace(/\r?\n/g, "")
