@@ -33,7 +33,7 @@ twStream.on(
 //    );
 
     console.log(
-      color.bgCyan(`${tweetData.screen_name}(@${tweetData.tweet_acount})`),
+      color.bgCyan(`${tweetData.name}(@${tweetData.tweet_acount})`),
       tweetData.text.replace(/\r?\n/g, "")
     );
   }
