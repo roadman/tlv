@@ -18,7 +18,7 @@ twStream.on(
   'tweet', 
   (tweetSrc:any) => {
     let tweetData = libTwit.getTweetData(tweetSrc)
-    if(!tweetData || tweetData.text.match(/［PR］/) || tweetData.text.length < 15) {
+    if(!tweetData || tweetData.text.match(/［PR］/) || tweetData.text.length < 24) {
       return;
     }
   
