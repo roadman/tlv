@@ -3,7 +3,6 @@
 //import * as notifier from 'node-notifier';
 import * as color    from 'colors';
 import * as libTwit  from './lib/twitter';
-const count = require('word-count');
 
 // env load
 require('dotenv').config();
@@ -19,7 +18,7 @@ twStream.on(
   'tweet', 
   (tweetSrc:any) => {
     let tweetData = libTwit.getTweetData(tweetSrc)
-    if(!tweetData || tweetData.text.match(/［PR］/) || count(tweetData.text) < 10) {
+    if(!tweetData || tweetData.text.match(/［PR］/) || tweetData.text.length < 10) {
       return;
     }
   
@@ -36,7 +35,7 @@ twStream.on(
     console.log(
       color.bgCyan(`${tweetData.name}(@${tweetData.tweet_acount})`),
       tweetData.text.replace(/\r?\n/g, ""),
-      ' = len:' + count(tweetData.text)
+      ' = len:' + tweetData.text.length
     );
     console.log();
   }
