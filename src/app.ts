@@ -38,5 +38,6 @@ twStream.on(
       tweetData.text.replace(/\r?\n/g, ""),
       ' = len:' + count(tweetData.text)
     );
+    console.log();
   }
 );
